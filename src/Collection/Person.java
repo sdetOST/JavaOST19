@@ -1,6 +1,6 @@
 package Collection;
 
-public class Person implements Comparable<Person>{
+public class Person {//implements Comparable<Person>{
 
 	String name;
 	int age;
@@ -41,19 +41,19 @@ public class Person implements Comparable<Person>{
 		return "[name=" + name + ", age=" + age + ", city=" + city + "]";
 	}
 
-	@Override
-	public int compareTo(Person o) {
-		return (this.name.compareTo(o.name) ) == 0 ? Integer.compare(this.age, o.age) : this.name.compareTo(o.name);    // sort name than age
-		
-	//	return (this.name.compareTo(o.name) ) == 0 ? 
-	//			( Integer.compare(this.age, o.age) == 0 ? this.city.compareTo(o.city)
-	//					:Integer.compare(this.age, o.age)) 
-	//					: this.name.compareTo(o.name);							// sort name than age than city																	
-		
-	//	return (this.name.compareTo(o.name) );
-	//	return (Integer.compare(this.age, o.age) );
-		
-	}
+//	@Override
+//	public int compareTo(Person o) {
+//		return (this.name.compareTo(o.name)  == 0 ? Integer.compare(this.age, o.age) : this.name.compareTo(o.name));    // sort name than age
+//		
+//		return (this.name.compareTo(o.name) ) == 0 ? 
+//			( Integer.compare(this.age, o.age) == 0 ? this.city.compareTo(o.city)
+//					:Integer.compare(this.age, o.age)) 
+//					: this.name.compareTo(o.name);							// sort name than age than city																	
+//		
+//		return (this.name.compareTo(o.name) );
+//		return (Integer.compare(this.age, o.age) );
+//		
+//	}
 	
 	
 

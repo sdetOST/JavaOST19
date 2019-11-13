@@ -4,21 +4,31 @@ import java.util.Scanner;
 
 public class Exception_190622 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 	
 		int[] arr = {1,2,3};
-		Scanner scn = new Scanner(System.in);
-		System.out.println("Enter number one:");
-		int a = scn.nextInt();
-		System.out.println("Enter number two:");
-		int b = scn.nextInt();
 		
+		try {
+			int c = arr[1]/0;
+			System.out.println(arr[100]);
 			
-			double c = arr[a]/b;
-			System.out.println(c);
-		
-		
+		}catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("first catch");
+			
+		}catch(Exception a) {
+			System.out.println("second catch");
+		}
+//--------------------------------------------------------		
 
-	}// a=4 :   ArithmeticException: / by zero     b=0: ArrayIndexOutOfBoundsException
+		Exception_190622.method();      
+		
+		// if I call the method which has throws exception I have to throws exception here too
+		
+	}
+	
+	public static void method() throws InterruptedException {
+		Thread.sleep(3000);
+		System.out.println("Hello");
+	}
 
 }

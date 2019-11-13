@@ -43,12 +43,12 @@ public class A001_Comperator {
 //-----------------------------------------------------------------------------------------
 		Comparator<Person> ageComparator = Comparator.comparing(p -> p.age );
 		Collections.sort(plst, ageComparator);			System.out.println(plst);
-		
+//		
 		Comparator<Person> nameComparator = Comparator.comparing(p -> p.name );
 		Collections.sort(plst, nameComparator);			System.out.println(plst);
-		
-		Comparator<Person> nameThanAgeComparator = nameComparator.thenComparing(ageComparator);				// ascending both
-		Collections.sort(plst, nameThanAgeComparator);			System.out.println(plst);
+//		
+//		Comparator<Person> nameThanAgeComparator = nameComparator.thenComparing(ageComparator);				// ascending both
+//		Collections.sort(plst, nameThanAgeComparator);			System.out.println(plst);
 //			
 //		Comparator<Person> nameThanAgeReversedComparator = nameComparator.thenComparing(ageComparator).reversed();	// descending both
 //		Collections.sort(plst, nameThanAgeReversedComparator);			System.out.println(plst);

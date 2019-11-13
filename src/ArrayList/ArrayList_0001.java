@@ -21,12 +21,14 @@ public class ArrayList_0001 {
 		lst.add("Grape");
 		lst.add("Peach");
 		lst.add("Palm");
-		lst.add("Mandarin"); // [Apple, Orange, Banana, Pear, Grape, Peach, Palm, Mandarin]
+		lst.add("Mandarin");			 // [Apple, Orange, Banana, Pear, Grape, Peach, Palm, Mandarin]
 		System.out.println(lst);
 		lst.remove(1);
 		System.out.println(lst);
 		lst.set(1, "aaaa");
 		lst.add("Aaaa");
+		lst.remove("Aaaa");
+		lst.remove(0);
 		System.out.println(lst);
 		
 		int  inum= lst.indexOf("Grape");
@@ -73,7 +75,7 @@ public class ArrayList_0001 {
 //
 ////-----------------reverse-----------------------------------
 //		System.out.println(lst);
-//		Collections.reverse(lst);
+		Collections.reverse(lst);
 //		System.out.println(lst);
 //
 ////--------- shuffle items inside the list------------------ 
@@ -95,15 +97,60 @@ public class ArrayList_0001 {
 //
 ////----------------ArrayList<Integer>------------------------------
 //
-//		ArrayList<Integer> priceList = new ArrayList<>();
-//
-//		priceList.add(10);
-//		priceList.add(20);
-//		priceList.add(30);
-//		priceList.add(40);
-//		priceList.add(50);
-//		priceList.add(60);
-//		System.out.println(priceList);
+\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //		priceList.add(2, 10);
 //		priceList.add(50);
 //		priceList.set(1,60);

@@ -1,6 +1,8 @@
 package Array;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Array_000001 {
@@ -13,7 +15,12 @@ public class Array_000001 {
 		int [] array2 = {1,9,2,8,3,6,5,5,15,5,8,-4};
 //		int [] array3= new int [0];
 		
+		Arrays.sort(array2);
+		System.out.println(Arrays.toString(array2));
 		
+//		Collections.sort(new ArrayList<Integer>(Arrays.asList(array2)));
+		
+		array2.
 		
 		
 //		array3 = array2 ;

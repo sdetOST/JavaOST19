@@ -177,6 +177,7 @@ public class A001_Map {
 		Set<String> keys = scores.keySet(); 				
 		System.out.println(keys); 						// [Mustafa, Halil, Mehmet, Firat, Kemal, Murat, Ali]
 		
+		scores.keySet().remove(Key)
 		keys.remove("Firat");							// Firat has been removed from keys AND ALSO SCORES  (keys Set is linked with scores Map)
 		System.out.println(keys); 						// [Mustafa, Halil, Mehmet, Kemal, Murat, Ali]
 		System.out.println(scores);						// {Mustafa=50, Halil=90, Mehmet=20, Kemal=50, Murat=60, Ali=50}
