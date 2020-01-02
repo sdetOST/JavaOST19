@@ -50,7 +50,7 @@ public class Lambda_001 {
 			}
 		};
 		
-		Moveable moveXmileLambda = (int mile) -> { System.out.println("moving "+ mile +" miles.");};
+		Moveable moveXmileLambda = (int mile) ->  { System.out.println("moving "+ mile +" miles."); };
 		Moveable moveShortMilelambda = mile ->  System.out.println("moving short "+ mile +" miles.");
 		
 		moveXmileLambda.move(20);													// moving 20 miles.

@@ -19,20 +19,20 @@ public class A001_Comparator {
 		laps.add(new Laptp("Dell", 12, 700));
 		
 
-		Comparator<Laptp> ramComp = Comparator.comparing(p -> p.ram );
-		Collections.sort(laps, ramComp);													// sort by ramSize
+//		Comparator<Laptp> ramComp = Comparator.comparing(p -> p.ram );
+//		Collections.sort(laps, ramComp);													// sort by ramSize
+//		
+//		Comparator<Laptp> priceComp = Comparator.comparing(p -> p.price );
+//		Collections.sort(laps, priceComp);													// sort by price
 		
-		Comparator<Laptp> priceComp = Comparator.comparing(p -> p.price );
-		Collections.sort(laps, priceComp);													// sort by price
-		
-		Comparator<Laptp> brandComp = Comparator.comparing(p -> p.brand );
+		Comparator<Laptp> brandComp = Comparator.comparing(p -> p.brand.charAt(3) );
 		Collections.sort(laps, brandComp);													// sort by brand			
 		
-		Comparator<Laptp> ramThanPriceComp = ramComp.thenComparing(priceComp);				
-		Collections.sort(laps, ramThanPriceComp);											// sort by ramSize than price
-		
-		Comparator<Laptp> revRamThanPriceComp = ramComp.reversed().thenComparing(priceComp);	// sort by reverseRamSize than price
-		Collections.sort(laps, revRamThanPriceComp);
+//		Comparator<Laptp> ramThanPriceComp = ramComp.thenComparing(priceComp);				
+//		Collections.sort(laps, ramThanPriceComp);											// sort by ramSize than price
+//		
+//		Comparator<Laptp> revRamThanPriceComp = ramComp.reversed().thenComparing(priceComp);	// sort by reverseRamSize than price
+//		Collections.sort(laps, revRamThanPriceComp);
 		
 		
 		for(Laptp l: laps) System.out.println(l);

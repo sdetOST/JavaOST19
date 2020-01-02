@@ -15,6 +15,8 @@ public class Array_000001 {
 		int [] array2 = {1,9,2,8,3,6,5,5,15,5,8,-4};
 //		int [] array3= new int [0];
 		
+		String[] ar = {"abg"};
+		
 		Arrays.sort(array2);
 		System.out.println(Arrays.toString(array2));
 		

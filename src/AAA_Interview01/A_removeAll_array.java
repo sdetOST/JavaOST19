@@ -13,7 +13,7 @@ import java.util.ListIterator;
 public class A_removeAll_array {
 
 	public static void main(String[] args) {
-		String[] ar = {"aa","aa","b","bb","a","b","aa"};
+		String[] ar = {"aa","aa","b","bbb","a","bb","aa"};
 		
 		removeAll1(ar);
 	}
@@ -28,19 +28,25 @@ public class A_removeAll_array {
 		ArrayList<String> list = new ArrayList<>(Arrays.asList(arr));
 		list.removeAll(Arrays.asList("aa"));
 		System.out.println(list);
+		
+		list.removeIf(s->s.contains("bb"));
+		
+		
 	}
 	public static void removeAll22(String[] arr) {
 		List<String> list = new ArrayList<>(Arrays.asList(arr));
 		while( list.contains("aa")) 
 			list.remove("aa");		
 		System.out.println(list);
+		
+		
 	}
 
 	public static void removeAll2(String[] arr) {
-		List<String> list = new ArrayList<>();
+		List<String> list = new ArrayList<>(Arrays.asList(arr));
 		for (String s: arr) 
-			if(!s.equals("aa"))  		
-				list.add(s);
+			if(s.equals("aa"))  		
+				list.remove(s);
 		System.out.println(list);
 	}
 	public static void removeAll3(String[] arr) {

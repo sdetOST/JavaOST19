@@ -1,8 +1,10 @@
-package a001;
+package AAA_Interview01;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -17,8 +19,8 @@ public class A_mathProblems001 {
 //		System.out.println(doubleToString(25.56));
 //		System.out.println(stringToInt("25"));
 //		System.out.println(stringToDouble("25.56"));
-		permutation("AB");
-//		permutation(12);
+		permutation("ABC");
+		permutation(122);
 	}
 	
 //====================================================================================
@@ -151,7 +153,7 @@ public class A_mathProblems001 {
 //------------------------------------------------------------------------------------		
 	public static int maxValue(int[] n) {
 
-		int max = Integer.MAX_VALUE;
+		int max = Integer.MIN_VALUE;
 		for (int each : n)
 			if (each > max)	max = each;
 		return max;
@@ -166,7 +168,7 @@ public class A_mathProblems001 {
 //------------------------------------------------------------------------------------
 	public static int minValue(int[] n) {
 
-		int min = Integer.MIN_VALUE;
+		int min = Integer.MAX_VALUE;
 		for (int each : n)
 			if (each < min)	min = each;
 		return min;
@@ -175,36 +177,111 @@ public class A_mathProblems001 {
 	public static int minValue1(int[] n) {
 		Arrays.sort(n);	return n[0];
 	}
+	
+	
+//====================================================================================
+//10. Array Second Largest Value
+//------------------------------------------------------------------------------------		
+	public static int secLargest(int[] n) {
+
+		int max = Integer.MIN_VALUE;
+		int max2 = Integer.MIN_VALUE;
+		for (int each : n) {
+			if (each > max) { max2 = max; max = each; }
+			else if (each > max2 && each != max) { max2 = each;}
+		}
+		return max2;
+	}
+//====================================================================================
+//10. Array nth Largest Value
+//------------------------------------------------------------------------------------
+	public static int nThLargest(int[] arr, int nth) {
+	
+		List<Integer> lst = new ArrayList();
+		for (Integer i :arr) { 	if(!lst.contains(i)) lst.add(i);}
+		Collections.sort(lst);
+		return (lst.get(lst.size()-nth));
+	}
+	
+//====================================================================================
+//10. Array Second Smallest Value
+//------------------------------------------------------------------------------------		
+	public static int secSmallest(int[] n) {
+
+		int min = Integer.MAX_VALUE;
+		int min2 = Integer.MAX_VALUE;
+		for (int each : n) {
+			if (each < min)  { min2 = min; min = each;}
+			else if (each < min2 && each != min) { min2 = each;	}
+		}
+		return min2;
+	}
+//====================================================================================
+//10. Array nth Smallest Value
+//------------------------------------------------------------------------------------
+	public static int nThSmallest(int[] arr, int nth) {
+	
+		List<Integer> lst = new ArrayList();
+		for (Integer i :arr) { 	if(!lst.contains(i)) lst.add(i);}
+		Collections.sort(lst);
+		return (lst.get(nth-1));
+	}
+
+	
 
 //====================================================================================
 //12. Sort Array Without (Arrays.sort(arr)) Method 
 //------------------------------------------------------------------------------------
-         public static void sortArrayWithoutArraysSortMethod(int [] nums){
-  	        int temp;
-	        for (int i = 0; i < nums.length; i++){
-	            for (int j = 0; j < nums.length-1; j++){
-	                if(nums[j] > nums[j+1]){
-	                    temp = nums[j+1];   nums[j+1] = nums[j];    nums[j] = temp;
-	                }
-	            }
-	        }   System.out.println(Arrays.toString(nums));
-	    }
-
+     public static void sortArrayWithoutArraysSortMethod(int [] nums){
+        int temp;
+        for (int i = 0; i < nums.length; i++){
+            for (int j = 0; j < nums.length-1; j++){
+                if(nums[j] > nums[j+1]){
+                    temp = nums[j+1];   nums[j+1] = nums[j];    nums[j] = temp;
+                }
+            }
+        }   System.out.println(Arrays.toString(nums));
+    }
+     
 //====================================================================================
-//13.Sort ArrayList 
+//12A. Sort Array Arrays.sort(arr,Collector)) Method -by second char
+//------------------------------------------------------------------------------------ 
+     public static void sortArrayArraysSortMethod(String [] arrString){
+		
+		Comparator<String> secondChar = Comparator.comparing( str -> str.charAt(2) );
+		Arrays.parallelSort(arrString, secondChar);
+		System.out.println(Arrays.toString(arrString));
+     }
+//====================================================================================
+//13.Sort String ArrayList- using Lambda
 //------------------------------------------------------------------------------------		
-         public static void sortArrayListBySecondChar(ArrayList<String> names) {
+	public static void sortArrayListBySecondChar(ArrayList<String> names) {
 		Comparator<String> secondChar = Comparator.comparing( str -> str.charAt(1) );
 		names.sort(secondChar);
 		System.out.println(names);
-         }
+      }
          
-         public static void sortArrayListByLaSTChar(ArrayList<String> names) {
-   		Comparator<String> lastChar = Comparator.comparing( str -> str.substring(str.length()-1) );
-   		names.sort(lastChar);
-   		System.out.println(names);
+	public static void sortArrayListByLaSTChar(ArrayList<String> names) {
+		Comparator<String> lastChar = Comparator.comparing( str -> str.substring(str.length()-1) );
+		names.sort(lastChar);
+		System.out.println(names);
    	}
-
+//------------------------------------------------------------------------------------		
+//13A.For String[] first convert to  ArrayList than sort with Lambda
+//------------------------------------------------------------------------------------		
+	
+//====================================================================================
+//13B.Sort Integer ArrayList- using Lambda
+//------------------------------------------------------------------------------------		
+	public static void sortIntArrayList(ArrayList<Integer> numbers) {
+		Comparator<Integer> comp = Comparator.comparing( i -> i );
+		numbers.sort(comp);
+		System.out.println(numbers);
+      }
+	
+//------------------------------------------------------------------------------------		
+//13C.For int[] first convert to  ArrayList than sort with Lambda
+//------------------------------------------------------------------------------------
 	
 //====================================================================================
 //14.Money conversion to $ - String[][] money = {{"mark","5","1"},{"pound","30.5","0.5"}};
@@ -349,7 +426,7 @@ public class A_mathProblems001 {
 		String s  = "A";				// s 
 		String s1 = "A";				// same
 		String s2 = s.concat("");		// same
-		String s3 = new String("A");		// new
+		String s3 = new String("A");	// new
 		String s4 = new String(s);		// new
 		String s5 = s+"";				// new
 /*		
@@ -408,9 +485,4 @@ public class A_mathProblems001 {
       	          Valid = true;
       	   return Valid;
 	  }
-         
-         
-         
-         
-         
 }
